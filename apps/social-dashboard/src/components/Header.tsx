@@ -11,9 +11,9 @@ const Header: Component = () => {
             <hr />
             <div class="theme">
                 <small>Dark Mode</small>
-                <span class="icon">
+                <button class="icon">
                     <span class="ball"></span>
-                </span>
+                </button>
             </div>
         </header>
     )
