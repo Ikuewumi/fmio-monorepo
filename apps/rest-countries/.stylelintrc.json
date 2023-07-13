@@ -1,0 +1,9 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "color-function-notation": null,
+        "media-feature-range-notation": "prefix",
+        "custom-property-empty-line-before": null,
+        "custom-property-pattern": null
+    }
+}
