@@ -26,7 +26,7 @@ export default function Home() {
     const derivedData = createMemo(() => {
         return data().filter((cty) => {
             if (search() === '') return true
-            return cty.name.toLowerCase().includes(search())
+            return cty.name.toLowerCase().includes(search().toLowerCase())
         })
     })
 
