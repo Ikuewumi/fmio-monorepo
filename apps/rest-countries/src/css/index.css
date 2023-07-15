@@ -235,7 +235,7 @@ div.grid-flow {
 
 
 
-.det-main img, .det-main .content {
+.det-main img {
     width: min(100%, 500px);
 }
 
@@ -261,7 +261,8 @@ div.grid-flow {
         "basic"
         "extra"
         "border"
-    ; 
+    ;
+    width: 100%;
  
 }
 
