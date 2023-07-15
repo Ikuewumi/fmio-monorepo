@@ -124,7 +124,7 @@ nav .arrow svg {
 
 /* List */
 div.grid-flow {
-    --grid-columns: minmax(300px, 1fr);
+    --grid-columns: minmax(1fr, 300px);
    
     align-items: start;
     gap: 3rem 2rem;
@@ -236,7 +236,7 @@ div.grid-flow {
 
 
 .det-main img, .det-main .content {
-    min-width: min(100%, 500px);
+    width: min(100%, 500px);
 }
 
 
