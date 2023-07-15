@@ -1,25 +1,42 @@
-import type { Component } from "solid-js"
+import { mergeProps, type Component } from "solid-js"
 import { A } from "@solidjs/router";
 
+interface Props {
+    name: string
+    img: string
+    population: number
+    region: string
+    capital: string
+}
+
+const defaultProps: Props = {
+    name: "Albania",
+    img: "/ax.png",
+    population: 4000000,
+    region: "Europe",
+    capital: "Tirana"
+}
 
 
-const Card: Component = () => {
+const Card: Component<Props> = (props) => {
+    const mprops = mergeProps(defaultProps, props)
+
     return (
         <div class="card">
-            <img src="/ax.png" alt="Flag of Albania" />
+            <img src={mprops.img} alt={`Flag of ${mprops.name}`} />
             <div class="content">
-                <A class="card-link" href="/details"><h2>Albania</h2></A>
+                <A class="card-link" href={`/details/${mprops.name}`}><h2>{mprops.name}</h2></A>
                 <p>
                     <b>Population: </b>
-                    323,947,000
+                    {mprops.population}
                 </p>
                 <p>
                     <b>Region: </b>
-                    Americas
+                    {mprops.region}
                 </p>
                 <p>
                     <b>Capital: </b>
-                    Washington, D.C.
+                    {mprops.capital}
                 </p>
             </div>
         </div>

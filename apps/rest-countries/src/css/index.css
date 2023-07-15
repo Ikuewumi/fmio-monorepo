@@ -125,7 +125,8 @@ nav .arrow svg {
 /* List */
 div.grid-flow {
     --grid-columns: minmax(300px, 1fr);
-    gap: 1rem 2rem;
+    
+    gap: 3rem 2rem;
     margin-top: 2rem;
 }
 
@@ -200,13 +201,33 @@ div.grid-flow {
 
 
 .det-main {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 2.5rem;
-    align-items: start;
+    grid-template-areas: 
+        "img"
+        "content"
+    ;
     margin-top: 2rem;
 }
+
+
+@media (width >= 850px) {
+    .det-main {
+    grid-template-areas:
+        "img content"
+    ;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+}
+
+.det-main img {
+    width: 350px;
+}
+}
+
+
 
 .det-main img, .det-main .content {
     min-width: min(100%, 500px);
@@ -214,6 +235,8 @@ div.grid-flow {
 
 
 .det-main img {
+    grid-area: img;
+    border: 0.5px solid #00000020;
     border-radius: 0.25rem;
     object-fit: cover;
     aspect-ratio: 16 / 9;
@@ -223,10 +246,10 @@ div.grid-flow {
 
 
 .det-main .content {
-    flex-grow: 1;
+    grid-area: content;
     display: grid;
     gap: 1.25rem;
-    align-items: start;
+    align-items: flex-start;
      grid-template-areas: 
         "h2"
         "basic"
@@ -278,7 +301,7 @@ div.grid-flow {
     grid-area: border;
     display: flex;
     flex-direction: column;
-    align-items: start; 
+    align-items: flex-start; 
     gap: 1rem 2rem;
     justify-content: space-evenly;
     margin-block-start: 1rem;
@@ -293,6 +316,10 @@ div.grid-flow {
 }
 
 
+.det-main .border h3 {
+    display: inline-block;
+}
+
 .det-main .border .bar {
     display: flex;
     flex-flow: row wrap;
@@ -303,18 +330,35 @@ div.grid-flow {
 
 
 
-.det-main .border .bar button {
+.det-main .border .bar .det-border {
     padding: 0.25rem 1rem;
     background: var(--clr-white);
-    border: 0.5px solid rgb(0 0 0 / 0.05);
+    border: 0.5px solid rgb(0 0 0 / 15%);
     border-radius: 0.2rem;
-    box-shadow: var(--shadow-elevation-low);
     font-family: var(--ff-base);
     font-size: var(--fs-300);
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--clr-text);
+}
+
+
+.loading {
+    margin-top: 4rem;
+    font-size: var(--fs-900);
     font-weight: 400;
 }
 
 
+.err {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
 
+.err h2 {
+    font-size: var(--fs-800);
+    font-weight: 700;
+}
 
 
