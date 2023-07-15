@@ -125,7 +125,8 @@ nav .arrow svg {
 /* List */
 div.grid-flow {
     --grid-columns: minmax(300px, 1fr);
-    
+   
+    align-items: start;
     gap: 3rem 2rem;
     margin-top: 2rem;
 }
@@ -160,6 +161,11 @@ div.grid-flow {
     padding-inline: 1.5rem;
     padding-block: 0.25rem 2rem;
     line-height: 1.5;
+}
+
+.card h2 {
+    font-weight: 600;
+    line-height: 1;
 }
 
 .card .content p + p {
@@ -277,7 +283,7 @@ div.grid-flow {
     grid-area: h2;
     margin-block-end: 1.5rem;
     font-size: var(--fs-900);
-    font-weight: 900;
+    font-weight: 900; 
 }
 
 .det-main .grp {
@@ -310,14 +316,19 @@ div.grid-flow {
 @media (width >= 850px) {
     .det-main .border {
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         margin-block-start: 1.25rem;
+    }
+
+    .det-main .border h3 {
+        margin-top: 0.5rem;
     }
 }
 
 
 .det-main .border h3 {
-    display: inline-block;
+    word-break: keep-all;
+    min-width: 157px;
 }
 
 .det-main .border .bar {

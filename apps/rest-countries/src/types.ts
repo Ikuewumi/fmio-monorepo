@@ -63,3 +63,5 @@ export interface Country {
     independent: boolean;
 }
 
+
+export type NavItems = 'all' | 'africa' | 'asia' | 'europe' | 'oceania' | 'americas'

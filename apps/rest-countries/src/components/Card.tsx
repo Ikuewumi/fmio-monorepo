@@ -1,5 +1,6 @@
 import { mergeProps, type Component } from "solid-js"
 import { A } from "@solidjs/router";
+import { fNum } from "../api";
 
 interface Props {
     name: string
@@ -28,7 +29,7 @@ const Card: Component<Props> = (props) => {
                 <A class="card-link" href={`/details/${mprops.name}`}><h2>{mprops.name}</h2></A>
                 <p>
                     <b>Population: </b>
-                    {mprops.population}
+                    {fNum(mprops.population)}
                 </p>
                 <p>
                     <b>Region: </b>
