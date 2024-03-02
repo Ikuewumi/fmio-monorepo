@@ -1,0 +1,93 @@
+:root {
+  --step-n2: clamp(0.6076rem, 0.5129rem + 0.4737vw, 0.88rem);
+  --step-n1: clamp(0.7292rem, 0.6002rem + 0.6449vw, 1.1rem);
+  --step-0: clamp(0.875rem, 0.7011rem + 0.8696vw, 1.375rem);
+  --step-1: clamp(1.05rem, 0.8174rem + 1.163vw, 1.7188rem);
+  --step-2: clamp(1.26rem, 0.951rem + 1.5451vw, 2.1484rem);
+  --step-3: clamp(1.512rem, 1.1038rem + 2.041vw, 2.6855rem);
+  --step-4: clamp(1.8144rem, 1.2779rem + 2.6827vw, 3.3569rem);
+  --step-5: clamp(2.1773rem, 1.4751rem + 3.5111vw, 4.1962rem);
+  --clr-grey: hsl(228deg 0% 0% / 0.2);
+  --clr-white: hsl(0deg 0% 100%);
+  --clr-green: hsl(163deg 72% 41%);
+  --clr-red: hsl(356deg 69% 56%);
+  --clr-facebook: hsl(208deg 92% 53%);
+  --clr-twitter: hsl(203deg 89% 53%);
+  --clr-instagram: linear-gradient(hsl(37deg 97% 70%), hsl(329deg 70% 58%));
+  --clr-youtube: hsl(348deg 97% 39%);
+  --clr-bg: hsl(0deg 0% 100%);
+  --clr-pale-blue: hsl(225deg 100% 98%);
+  --clr-blue-gray: hsl(227deg 47% 96%);
+  --clr-text-pale: hsl(228deg 12% 44%);
+  --clr-text: hsl(230deg 17% 14%);
+  --radius: 0.4rem;
+
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(var(--clr-blue-gray) 200px, transparent 200px 100%);
+  background-attachment: fixed;
+  color: var(--clr-text);
+}
+
+h1, h2, h3, h4 h5, h6, strong {
+  line-height: 0.9;
+}
+
+
+
+[data-grid] {
+  --_grid-offset: var(--grid-offset, 1rem);
+  --_column-gap: var(--column-gap, 0);
+
+  display: grid;
+  gap: var(--_column-gap);
+  grid-template-columns: 
+    [full-start left-start] minmax(var(--_grid-offset), 1fr)
+    [content-start right-start] minmax(auto, 70rem) 
+    [content-end left-end] minmax(var(--_grid-offset), 1fr) 
+    [full-end right-end];
+
+  & > * {
+    grid-column: content;
+  }
+}
+
+
+/* a11y */
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}

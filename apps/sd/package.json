@@ -1,0 +1,23 @@
+{
+  "name": "social-dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint:css": "npx stylelint '**/*.scss'"
+  },
+  "dependencies": {
+    "sass": "^1.63.6",
+    "solid-js": "^1.8.15"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.17.5",
+    "vite": "^5.1.4",
+    "vite-plugin-solid": "^2.10.1"
+  }
+}
