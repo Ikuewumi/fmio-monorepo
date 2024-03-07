@@ -27,7 +27,7 @@
 		inset: 0 0 auto 0;
 		width: 100%;
 		height: var(--bar-height);
-		background: var(--icon-clr);
+		background: var(--border-bg);
 		border-top-left-radius: var(--radius);
 		border-top-right-radius: var(--radius);
 	}
@@ -94,6 +94,7 @@
 
 	&-change {
 		--icon-size: 10px;
+		color: var(--clr);
 		
 		span {
 			font-size: var(--step-n2);
@@ -175,6 +176,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.15rem;
+		color: var(--clr);
 
 		span {
 			line-height: 0.9;

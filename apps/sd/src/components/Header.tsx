@@ -1,4 +1,14 @@
+import { useStore } from "@nanostores/solid";
+import { Theme } from "../composables/store";
+
  const Header = () => {
+	const theme = useStore($systemTheme);
+
+	const toggleTheme = () => {
+		const nextTheme = getNextTheme(allThemes, theme());
+		$systemTheme.set(nextTheme as Theme);
+	}
+
 	return (
 		<header class="header">
 			<div class="header-heading">
@@ -7,8 +17,8 @@
 			</div>
 
 
-			<button class="header-theme">
-				<span>Dark Mode</span>
+			<button class="header-theme" onclick={toggleTheme}>
+				<span>{getNextTheme(allThemes, theme())} Mode</span>
 				<span class="header-theme-toggle" role="presentation"></span>
 			</button>
 		</header>

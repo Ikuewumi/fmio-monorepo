@@ -21,6 +21,7 @@
   --clr-text-pale: hsl(228deg 12% 44%);
   --clr-text: hsl(230deg 17% 14%);
   --radius: 0.4rem;
+  --theme-button-align: start;
 
   line-height: 1.5;
   font-weight: 400;
@@ -33,6 +34,20 @@
 
 
 
+
+
+  &[data-theme=dark] {
+    --clr-white: hsl(0deg 0% 0%);
+    --clr-text: hsl(230deg 17% 90%);
+    --clr-blue-gray: hsl(227deg 47% 96%);
+    --clr-bg: hsl(230deg 17% 14%);
+    --clr-pale-blue: hsl(225deg 100% 98%);
+    --clr-blue-gray: hsl(228deg 28% 20%);
+    --clr-text-pale: hsl(228deg 14% 66%);
+ 
+    --clr-grey: hsl(228deg 0% 90% / 0.2);
+    --theme-button-align: end;
+  }
 }
 
 
@@ -46,7 +61,7 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(var(--clr-blue-gray) 200px, transparent 200px 100%);
+  background: linear-gradient(var(--clr-blue-gray) 200px, var(--clr-white) 200px 100%);
   background-attachment: fixed;
   color: var(--clr-text);
 }

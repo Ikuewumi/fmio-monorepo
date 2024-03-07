@@ -8,6 +8,7 @@ return (
 
 
 		<symbol viewBox="0 0 8 4" id="up"><path fill="currentColor" fill-rule="evenodd" d="M0 4l4-4 4 4z"/></symbol>
+		<symbol viewBox="0 0 8 4" id="down"><path fill="currentColor" fill-rule="evenodd" d="M0 0l4 4 4-4z"/></symbol>
 	</svg>
 )
 }

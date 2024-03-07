@@ -15,7 +15,7 @@ const socialSvgs = [
   {
     name: "instagram",
     clr: "hsl(329deg 70% 58%)",
-    bg: "linear-gradient(hsl(37deg 97% 70%), hsl(329deg 70% 58%))"
+    bg: "linear-gradient(90deg, hsl(37deg 97% 70%), hsl(329deg 70% 58%))"
   },
 
 
@@ -26,11 +26,19 @@ const socialSvgs = [
 ] as const
 
 
+const getChangeInfo = (change:number) => {
+  const svg = change > 0 ? '#up' : '#down';
+  const clr = change > 0 ? 'var(--clr-green)' : 'var(--clr-red)';
+
+  return {svg, clr}
+}
+
+
 
 type Social = typeof socialSvgs[number]["name"]
 
 
-interface LargeCardProps {
+export interface LargeCardProps {
   title: Social
   name: string
   number: number | string
@@ -39,7 +47,7 @@ interface LargeCardProps {
 }
 
 
-interface SmallCardProps {
+export interface SmallCardProps {
   title: Social
   event: string
   number: number | string
@@ -61,10 +69,11 @@ export const LargeCard = (props_: LargeCardProps) => {
   const obj = () => socialSvgs.find(a => a.name===props.title)!;
 
   return (
-    <div class="lcard">
+    //@ts-ignore
+    <div class="lcard" style={`--icon-clr: ${obj().clr}; --border-bg: ${obj()?.bg ?? obj().clr}`}>
       <h2 class="sr-only">{obj().name} Followers</h2>
       
-      <div class="lcard-social">
+      <div class="lcard-social" >
       	<svg viewBox="0 0 24 24"><use href={`#${obj().name}`}></use></svg>
       	<strong>{props.name}</strong>
       </div>
@@ -74,9 +83,9 @@ export const LargeCard = (props_: LargeCardProps) => {
 	<span>followers</span>
       </div>
 
-      <div class="lcard-change">
-	<svg viewBox="0 0 8 4"><use href="#up"></use></svg>
-	<span>{props.change} Today</span>
+      <div class="lcard-change" style={`--clr: ${getChangeInfo(props.change).clr};`}>
+	<svg viewBox="0 0 8 4"><use href={getChangeInfo(props.change).svg}></use></svg>
+	<span>{Math.abs(props.change)} Today</span>
       </div>
     </div>
 
@@ -87,22 +96,29 @@ export const LargeCard = (props_: LargeCardProps) => {
 
 
 
-export const Card = () => {
+export const Card = (props_: SmallCardProps) => {
+
+  const props = mergeProps({
+    title: 'facebook',
+    event: 'Likes',
+    number: 87,
+    change: 2257
+  }, props_)
+
+  const obj = () => socialSvgs.find(o => o.name === props.title)!;
+
 
   return (
-    <div class="card">
+    <div class="card" style={`--icon-clr: ${obj().clr};`}>
       <div class="card-event">
-	<h3>Likes <span class="sr-only">on facebook</span></h3>
-	<svg viewBox="0 0 24 24" role="presentation"><use href="#facebook"></use></svg>
+	<h3>{props.event} <span class="sr-only">on {props.title}</span></h3>
+	<svg viewBox="0 0 24 24" role="presentation"><use href={`#${props.title}`}></use></svg>
       </div>
       <div class="card-numbers">
-	<strong>400</strong>
-	<div class="card-change">
-	  <svg viewBox="0 0 8 4">
-	    <title>+</title>
-	    <use href="#up"></use>
-	  </svg>
-	  <span>303%</span>
+	<strong>{props.number}</strong>
+	<div class="card-change" style={`--clr: ${getChangeInfo(props.change).clr};`}>
+	  <svg viewBox="0 0 8 4"><use href={getChangeInfo(props.change).svg}></use></svg>
+	  <span>{Math.abs(props.change)}%</span>
 	</div>
       </div>      
 
