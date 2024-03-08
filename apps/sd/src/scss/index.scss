@@ -48,6 +48,10 @@
     --clr-grey: hsl(228deg 0% 90% / 0.2);
     --theme-button-align: end;
   }
+
+  @media (max-width: 768px) {
+    font-size: 17px;
+  }
 }
 
 
@@ -60,8 +64,9 @@
 }
 
 body {
+  --offset: 200px;
   min-height: 100vh;
-  background: linear-gradient(var(--clr-blue-gray) 200px, var(--clr-white) 200px 100%);
+  background: linear-gradient(var(--clr-blue-gray) var(--offset), var(--clr-white) var(--offset) 100%);
   background-attachment: fixed;
   color: var(--clr-text);
 }
