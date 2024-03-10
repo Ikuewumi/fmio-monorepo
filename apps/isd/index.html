@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>FMIO | Snap Homepage with Dropdowns</title>
+</head>
+
+<body data-grid>
+
+  <header class="header">
+    <strong class="header-logo">snap</strong>
+
+
+
+    <nav class="nav">
+      <span id="nav-label" hidden>Navigation</span>
+
+      <button title="open menu" aria-expanded="false" aria-labelledby="nav-label">
+        <svg viewBox="0 0 24 24">
+          <use href="#menu"></use>
+        </svg>
+      </button>
+
+
+      <div class="nav-container" role="dialog" aria-labelledby="nav-label">
+
+
+
+
+        <button title="close menu" aria-label="Close">
+          <svg viewBox="0 0 24 24">
+            <use href="#close"></use>
+          </svg>
+        </button>
+
+        <ul class="nav-items">
+          <li>
+            <details class="features">
+              <summary>Features</summary>
+              <ul>
+                <li>
+                  <a href="#">
+                    <img src="/images/icon-todo.svg" alt="">
+                    <span>Todo List</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                    <img src="/images/icon-calendar.svg" alt="">
+                    <span>Calendar</span>
+                  </a></li>
+                <li><a href="#">
+                    <img src="/images/icon-reminders.svg" alt="">
+                    <span>Reminders</span>
+                  </a></li>
+                <li><a href="#">
+                    <img src="/images/icon-planning.svg" alt="">
+                    <span>Planning</span>
+                  </a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="company">
+              <summary>Company</summary>
+              <ul>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </details>
+
+          </li>
+
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <ul class="nav-users">
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+        </ul>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+        <h1>Make remote work</h1>
+
+        <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch
+          productivity soar.</p>
+
+        <a href="#">Learn More</a>
+
+        <ul class="list-clients">
+          <li>
+            <img src="/images/client-databiz.svg" alt="databiz" />
+          </li>
+          <li>
+            <img src="/images/client-audiophile.svg" alt="audiophile" />
+          </li>
+          <li>
+            <img src="/images/client-meet.svg" alt="meet" />
+          </li>
+          <li>
+            <img src="/images/client-maker.svg" alt="maker" />
+          </li>
+        </ul>
+
+      </div>
+
+      <picture>
+        <source srcset="/images/image-hero-desktop.png" media="(min-width: 55rem)">
+        <img class="hero-image" src="/images/image-hero-mobile.png" alt="user working remotely">
+      </picture>
+
+    </section>
+
+  </main>
+
+  <footer data-grid data-gspace="full">
+    <p>Challenge done by <a href="https://github.com/Ikuewumi" target="_blank">Ayobami Ikuewumi</a></p>
+  </footer>
+
+
+
+
+  <svg style="display: none;">
+    <symbol viewBox="0 0 24 24" id="close">
+      <path fill="currentColor"
+        d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"></path>
+    </symbol>
+    <symbol viewBox="0 0 24 24" id="menu">
+      <path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"></path>
+    </symbol>
+
+  </svg>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
