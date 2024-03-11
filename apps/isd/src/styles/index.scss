@@ -279,12 +279,12 @@ footer {
 			gap: 1rem;
 			width: max-content;
 			padding: 1.5rem 0rem 0.5rem 1.5rem;
-			background: var(--clr-w);
 
 			@media (min-width: 50rem) {
 				position: absolute;
 				box-shadow: 0 2px 8px -5px hsl(0deg 0% 0% / 0.8);
 				padding: 1.5rem;
+				background: var(--clr-w);
 				border-radius: calc(var(--radius) / 2);
 			}
 
