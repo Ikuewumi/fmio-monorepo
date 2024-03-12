@@ -62,12 +62,18 @@ importers:
 
   apps/rh:
     devDependencies:
+      '@types/node':
+        specifier: ^20.11.20
+        version: 20.11.20
       sass:
         specifier: ^1.63.6
         version: 1.63.6
       typescript:
         specifier: ^5.2.2
         version: 5.3.3
+      unplugin-auto-import:
+        specifier: ^0.17.5
+        version: 0.17.5
       vite:
         specifier: ^5.1.4
         version: 5.1.4(@types/node@20.11.20)(sass@1.63.6)
