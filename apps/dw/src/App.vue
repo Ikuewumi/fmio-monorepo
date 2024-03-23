@@ -232,12 +232,17 @@ const pronounce = () => {
     &:before {
       content: "";
       position: absolute;
-      inset: 1.25rem 0 auto 0;
+      inset: 16px 0 auto 0;
 
       width: 100%;
       height: 1px;
       background: var(--clr-light-grey);
       z-index: -1;
+
+
+      @media (min-width: 768px) {
+        inset: 1.25rem 0 auto 0;
+      }
     }
 
     &-speechpart {
