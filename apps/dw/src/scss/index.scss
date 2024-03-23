@@ -1,0 +1,139 @@
+:root {
+
+        --font-size-n2: clamp(0.651rem, 0.5992rem + 0.2591vw, 0.8rem);
+        --font-size-n1: clamp(0.7813rem, 0.7052rem + 0.3804vw, 1rem);
+        --font-size-0: clamp(0.9375rem, 0.8288rem + 0.5435vw, 1.25rem);
+        --font-size-1: clamp(1.125rem, 0.9728rem + 0.7609vw, 1.5625rem);
+        --font-size-2: clamp(1.35rem, 1.1402rem + 1.0489vw, 1.9531rem);
+        --font-size-3: clamp(1.62rem, 1.3343rem + 1.4285vw, 2.4414rem);
+        --font-size-4: clamp(1.944rem, 1.5587rem + 1.9265vw, 3.0518rem);
+        --font-size-5: clamp(2.3328rem, 1.8174rem + 2.5772vw, 3.8147rem);
+
+
+        --font-sans-serif: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        --font-serif: Lora, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        --font-monospace: Inconsolata, 'Courier New', Courier, monospace;
+
+        --font-size: 17px;
+        --font-family: var(--font-serif);
+        //--font-family: Inconsolata, 'Courier New', Courier, monospace;      
+
+        --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+        --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+        --space-xs: clamp(0.6875rem, 0.6005rem + 0.4348vw, 0.9375rem);
+        --space-s: clamp(0.9375rem, 0.8288rem + 0.5435vw, 1.25rem);
+        --space-m: clamp(1.4375rem, 1.2853rem + 0.7609vw, 1.875rem);
+        --space-l: clamp(1.875rem, 1.6576rem + 1.087vw, 2.5rem);
+        --space-xl: clamp(2.8125rem, 2.4864rem + 1.6304vw, 3.75rem);
+        --space-2xl: clamp(3.75rem, 3.3152rem + 2.1739vw, 5rem);
+        --space-3xl: clamp(5.625rem, 4.9728rem + 3.2609vw, 7.5rem);
+
+        --clr-background: hsl(0deg, 0%, 100%);
+        --clr-color: hsl(0deg 0% 20%);
+        --clr-light-grey: hsl(0deg, 0%, 91%);
+        --clr-mid-grey: hsl(0deg, 0%, 91%);
+        --clr-dark-grey: hsl(0deg, 0%, 40%);
+        --clr-primary: hsl(272deg, 45%, 56%);
+        --clr-light-primary: hsl(275deg, 80%, 90%);
+        --clr-bg-theme-toggle: var(--clr-dark-grey);
+
+        color-scheme: light;
+
+        font-size: var(--font-size);
+        font-family: var(--font-family);
+
+
+
+
+        &[data-dark-theme="true"] {
+                --clr-background: hsl(0deg, 0%, 5%);
+                --clr-color: hsl(0deg 0% 80%);
+                --clr-light-grey: hsl(0deg, 0%, 20%);
+                --clr-mid-grey: hsl(0deg, 0%, 15%);
+                --clr-dark-grey: hsl(0deg, 0%, 55%);
+                --clr-primary: hsl(272deg, 45%, 56%);
+                --clr-light-primary: hsl(275deg, 80%, 90%);
+                --clr-bg-theme-toggle: var(--clr-primary);
+
+                color-scheme: dark;
+        }
+
+
+        &[data-font="serif"] {
+                --font-family: var(--font-serif);
+        }
+
+        &[data-font="sans-serif"] {
+                --font-family: var(--font-sans-serif);
+        }
+
+        &[data-font="monospace"] {
+                --font-family: var(--font-monospace);
+        }
+}
+
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font: inherit;
+        color: inherit;
+}
+
+
+
+body {
+        background-color: var(--clr-background);
+        color: var(--clr-color);
+        accent-color: var(--clr-primary);
+}
+
+
+
+
+
+
+
+
+[data-grid] {
+        --_grid-gap: var(--grid-gap, 2rem);
+        display: grid;
+        grid-template-columns:
+                [full-start left-start] minmax(var(--_grid-gap), 1fr) [content-start right-start] minmax(auto, 40rem) [content-end left-end] minmax(var(--_grid-gap), 1fr) [full-end right-end];
+
+
+        &>* {
+                grid-column: content;
+
+        }
+}
+
+
+
+// Screen Reader Only Content
+
+.sr-only {
+        border: 0 !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+        -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important;
+        height: 1px !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        width: 1px !important;
+        white-space: nowrap !important;
+}
+
+
+svg,
+img,
+video {
+        max-width: 100%;
+        display: block;
+}
+
+svg {
+        width: var(--icon-size, 30px);
+}
