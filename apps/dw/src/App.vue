@@ -349,6 +349,7 @@ const pronounce = () => {
   gap: 0.5rem;
   padding-block: 1rem 1.5rem;
   border-top: 1px solid var(--clr-light-grey);
+  word-break: break-all;
 
   strong {
     font-size: var(--font-size-n1);
