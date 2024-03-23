@@ -629,10 +629,11 @@ section#all-jobs {
 		object-fit: contain;
 		aspect-ratio: 1;
 		border: 1px solid var(--clr-dark-gray);
-		border-radius: 50%;
+		border-radius: var(--radius-small);
 		background: var(--company-clr);
 		margin-top: calc(-0.5 * var(--image-width));
 		margin-left: var(--offset-right);
+		padding: 0.5rem;
 
 	}
 
@@ -715,7 +716,7 @@ section#all-jobs {
 
 
 .jcompany {
-	--img-width: 40px;
+	--img-width: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 0.2rem 0.25rem;
@@ -738,6 +739,7 @@ section#all-jobs {
 		object-fit: contain;
 		aspect-ratio: 1;
 		margin-top: calc(var(--img-width) * -0.5);
+		padding: 0.25rem;
 		border-radius: 0.5rem;
 
 
@@ -745,6 +747,7 @@ section#all-jobs {
 
 			flex: 3 0 auto;
 			margin-top: 0;
+			padding: 1rem;
 			border-radius: 0.5rem 0 0 0;
 			border-right: 2px solid hsl(var(--shadow-color) / 0.5);
 		}
@@ -815,13 +818,18 @@ section#all-jobs {
 
 	display: flex;
 	flex-direction: column;
-	padding: 1.75rem 2rem 2.25rem 2rem;
+	padding: 0.25rem 0.5rem 0.75rem 1rem;
 	margin-top: 2rem;
 	background: var(--clr-white);
 	color: var(--clr-dark-gray);
 	border-radius: 0.5rem;
 	box-shadow: 0px 0px 7px -2px hsl(var(--shadow-color) / 0.2);
 
+
+	@include mq {
+	
+		padding: 1.75rem 2rem 2.25rem 2rem;
+	}
 }
 
 

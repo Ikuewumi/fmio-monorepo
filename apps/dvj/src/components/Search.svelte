@@ -20,7 +20,7 @@ const emitSearch = () => {
 <form class="search" on:submit|preventDefault={emitSearch}>
         <div class="search-field">
                 <label for="job-title">
-                        <span class="sr-only">Search Job Title</span>
+                        <span class="sr-only">Search Job Position</span>
                         <svg viewBox="0 0 24 24">
                                 <use href="#search"></use>
                         </svg>
@@ -28,7 +28,7 @@ const emitSearch = () => {
                 <input
                         id="job-title"
                         type="search"
-                        placeholder="Filter by title"
+                        placeholder="Filter by position"
                         bind:value={$searchFields.title}
                 />
         </div>

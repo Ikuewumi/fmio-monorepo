@@ -32,7 +32,7 @@
     
     filteredJobs = allJobs.filter(job => {
 
-      const hasTitle = job.position.includes(e.detail?.title!)
+      const hasTitle = job.position.toLowerCase().includes(e.detail?.title!.trim().toLowerCase())
       const contractCorrect = !!(e.detail?.fullTimeOnly) ? job.contract === FULL_TIME : true;
       const locationCorrect = (typeof e.detail?.location === "string") ? job.location === e.detail.location : true;
       
@@ -52,7 +52,7 @@
   {:then}
 <main id="main">
   {#if $router?.route === "home"}
-    <Search locationClues={allJobs.map(job=>job.location)} on:search-jobs={searchJobs} />
+    <Search locationClues={Array.from(new Set(allJobs.map(job=>job.location)))} on:search-jobs={searchJobs} />
     <section id="all-jobs" class="">
       <h1 class="sr-only" id="all-jobs-title">All Jobs</h1>
       <ul class="job-list" aria-describedby="all-jobs-title">
