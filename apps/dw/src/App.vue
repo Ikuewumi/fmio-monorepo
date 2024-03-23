@@ -126,6 +126,7 @@ const pronounce = () => {
   padding: 1rem 0.25rem 1.25rem 0.25rem;
   border-radius: var(--space-s);
   box-shadow: 0 0.5px 3px -1.5px var(--clr-color);
+  text-align: center;
 
 
 
