@@ -8,7 +8,7 @@ function App() {
 
         <section class="info">
           <picture class="info-picture">
-            <img src="./images/avatar-jessica.jpeg" alt="" class="info-img" />
+            <img src="./images/avatar-jessica.jpeg" alt="Jessica Randall" class="info-img" />
           </picture>
           <h1 class="info-name">Jessica Randall</h1>
           <p class="info-jobtitle">London, United Kingdom</p>
