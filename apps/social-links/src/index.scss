@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Font-face
+@font-face {
+  font-family: "Inter";
+  src: local("sans-serif"),
+    url("./fonts/Inter-VariableFont_slnt\,wght.ttf");
+
+}
+
+:root {
+
+  --font-size-n2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --font-size-n1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --font-size-0: clamp(1.125rem, 1.0739rem + 0.2273vw, 1.25rem);
+  --font-size-1: clamp(1.35rem, 1.2631rem + 0.3864vw, 1.5625rem);
+  --font-size-2: clamp(1.62rem, 1.4837rem + 0.6057vw, 1.9531rem);
+  --font-size-3: clamp(1.944rem, 1.7405rem + 0.9044vw, 2.4414rem);
+  --font-size-4: clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --font-size-5: clamp(2.7994rem, 2.384rem + 1.8461vw, 3.8147rem);
+
+  --font-sans: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-serif: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  --font-monospace: 'Courier New', Courier, monospace;
+
+  --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
+  --space-2xs: clamp(0.5rem, 0.4565rem + 0.2174vw, 0.625rem);
+  --space-xs: clamp(0.6875rem, 0.6005rem + 0.4348vw, 0.9375rem);
+  --space-s: clamp(0.9375rem, 0.8288rem + 0.5435vw, 1.25rem);
+  --space-m: clamp(1.4375rem, 1.2853rem + 0.7609vw, 1.875rem);
+  --space-l: clamp(1.875rem, 1.6576rem + 1.087vw, 2.5rem);
+  --space-xl: clamp(2.8125rem, 2.4864rem + 1.6304vw, 3.75rem);
+  --space-2xl: clamp(3.75rem, 3.3152rem + 2.1739vw, 5rem);
+  --space-3xl: clamp(5.625rem, 4.9728rem + 3.2609vw, 7.5rem);
+
+  --width-mobile: calc(100% - 3rem);
+
+  --clr-green: hsl(75deg, 94%, 57%);
+  --clr-white: hsl(0deg, 0%, 100%);
+  --clr-grey-700: hsl(0deg, 0%, 20%);
+  --clr-grey-800: hsl(0deg, 0%, 12%);
+  --clr-grey-900: hsl(0deg, 0%, 8%);
+
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-grey-900);
+  color: var(--clr-white);
+}
+
+#root {
+  display: contents;
+}
+
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
